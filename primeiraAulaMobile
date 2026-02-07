@@ -1,0 +1,69 @@
+buttonCustom.js =
+import {TouchableOpacity, Text, StyleSheet} from 'react-native'
+
+
+
+
+export const ButtonCustom = ({name}) => {
+  return (
+    <TouchableOpacity style={styles.button}>
+      <Text style={styles.textButton}>{name}</Text>
+    </TouchableOpacity>
+  )
+}
+
+const styles = StyleSheet.create({
+button: {
+    height: 40,
+    width: 200,
+    backgroundColor: 'blue',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 8
+  },
+  textButton: {
+    fontSize: 18,
+    color: '#fafafa'
+  }
+})
+
+-------------------------------------
+
+App.js =
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native"
+import {ButtonCustom} from './components/buttonCustom'
+
+
+export default function App () {
+  return (
+    <View style={styles.container}>
+      <Text>Hello World</Text>
+      <ButtonCustom name="Login"/>
+      <ButtonCustom name="Cadastrar"/>
+    </View>
+  )
+}
+
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "green",
+    flex: 1,
+    justifyContent: "center",
+    alignItems: 'center'
+  },
+  button: {
+    height: 40,
+    width: 200,
+    backgroundColor: 'red',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 8
+  },
+  textButton: {
+    fontSize: 18,
+    color: '#fafafa'
+  }
+})
